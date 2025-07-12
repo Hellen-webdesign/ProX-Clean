@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProX Clean - Magazin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #C89C3F;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      width: 100%;
+      justify-content: center;
+    }
+
+    header {
+      background-color: #C89C3F;
+      color: #180303;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #C89C3F;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .logo {
+      height: 70px;
+      
+    }
+
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #0b0a0a;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #C89C3F;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+    }
+   
+    nav a {
+      color: #130808;
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+      justify-content: center;
+      
+    }
+
+
+    nav.active {
+      display: flex;
+    }
+    
+
+    
+
+    /* SHOP SECTION */
+    .shop-container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .cart {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #C89C3F;
+      color: #fff;
+    }
+
+    .cart h2 {
+      color: #C89C3F;
+      margin-bottom: 15px;
+    }
+
+    .cart-items {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: #C89C3F;
+      padding: 10px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #fff;
+      padding: 5px 0;
+    }
+
+    .cart-total {
+      text-align: right;
+      font-weight: bold;
+      color: #C89C3F;
+      margin-top: 10px;
+    }
+
+    .btn-clear {
+      background-color: #C89C3F;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn-clear:hover {
+      background-color: #fff;
+      color: #C89C3F;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: #111;
+      padding: 15px;
+      border: 1px solid #C89C3F;
+      border-radius: 8px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product-card p {
+      color: #d1b661;
+    }
+
+    .product-card button {
+      margin-top: auto;
+      background-color: #C89C3F;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .product-card button:hover {
+      background-color: #fff;
+      color: #C89C3F;
+    }
+
+    
+          /* ICONS CONTAINER */
+
+          .icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Centrează iconurile */
+  gap: 10px; /* Spațiu între elemente */
+  margin-top: 30px;
+  background-color: #C89C3F; /* Elimină fundalul */
+}
+
+.icons img {
+  height: 30px;
+  width: 30px;
+  margin: 0 10px;
+  object-fit: contain;
+  
+}
+
+.icons h3 {
+  color: #333;
+  font-size: medium;
+  margin: 0;
+  /* Dacă vrei ca textul să fie afișat în linie cu iconurile, poți ajusta marginile */
+  color: #fff;
+}
+
+.icons span {
+  color: #555;
+  font-size: small;
+}
+
+          /* END-PAGE */
+
+          .end-page {
+            display: 100%;
+            background: #C89C3F;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            padding-left: 10px;
+            margin-left: 0px;
+
+            border: 
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            flex: 1 1 10rem;
+            margin-top: 0px;
+          }
+
+          .end-page img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            margin-left: 10px;
+            object-position: center;
+            margin-top: 100px;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+          }
+
+          .end-page a:hover img {
+  transform: scale(1.2);
+  filter: sepia(1) hue-rotate(30deg) saturate(4); /* efect auriu la hover */
+}
+
+          .end-page h4 {
+            font-size: medium;
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 90px;
+            margin-right: 20px;
+            margin-top: -20px;
+            color: #fff;
+          }
+
+
+    /* MEDIA QUERIES */
+    @media(min-width: 768px) {
+      header {
+        justify-content: flex-start;
+        color: #000
+        
+      }
+
+      .menu-toggle {
+        display: none;
+        color: #000;
+      
+      }
+
+      nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        background: none;
+        width: auto;
+        margin-left: auto;
+        color: #000;
+      }
+
+      nav a {
+        border: none;
+        padding: 0 15px;
+        color: #0c0202;
+      }
+
+      nav a:hover {
+        background: none;
+        color: #C89C3F;
+      }
+
+     
+
+      .shop-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .cart {
+        flex: 1;
+        max-width: 300px;
+      }
+
+      .product {
+        flex: 3;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="images/Logo ProX Clean .jpg background ROUND.png" alt="logo" class="logo" />
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
+      <a href="index.html">Despre noi</a>
+      <a href="servicii.html">Servicii</a>
+      <a href="Produse.html">Produse</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="shop-container">
+
+    <div class="cart">
+      <h2>Coșul tău</h2>
+      <div class="cart-items">Coșul este gol.</div>
+      <div class="cart-total">Total: 0.00 RON</div>
+      <button class="btn-clear">Golește coșul</button>
+    </div>
+
+    <div class="product">
+      <div class="product-card" data-id="1" data-name="Produs 1" data-price="99.99">
+        <img src="https://via.placeholder.com/220x150?text=Produs+1" alt="Produs 1" />
+        <h3>Produs 1</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+      <div class="product-card" data-id="2" data-name="Produs 2" data-price="149.50">
+        <img src="https://via.placeholder.com/220x150?text=Produs+2" alt="Produs 2" />
+        <h3>Produs 2</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+      <div class="product-card" data-id="3" data-name="Produs 3" data-price="75.00">
+        <img src="https://via.placeholder.com/220x150?text=Produs+3" alt="Produs 3" />
+        <h3>Produs 3</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+      <div class="product-card" data-id="4" data-name="Produs 4" data-price="120.00">
+        <img src="https://via.placeholder.com/220x150?text=Produs+4" alt="Produs 4" />
+        <h3>Produs 4</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+      <div class="product-card" data-id="5" data-name="Produs 5" data-price="89.00">
+        <img src="https://via.placeholder.com/220x150?text=Produs+5" alt="Produs 5" />
+        <h3>Produs 5</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+      <div class="product-card" data-id="6" data-name="Produs 6" data-price="55.55">
+        <img src="https://via.placeholder.com/220x150?text=Produs+6" alt="Produs 6" />
+        <h3>Produs 6</h3>
+        <p>Descriere scurtă</p>
+        <button>Adaugă în coș</button>
+      </div>
+    </div>
+
+  </section>
+
+   <!-- SECTIUNEA ICONS -->
+   <section class="icons-container">
+    <div class="icons">
+      <img src="icons imege/delivery-man.png" alt="Free delivery">
+      <h3>Free delivery</h3>
+    
+    </div>
+    <div class="icons">
+      <img src="icons imege/payment-method.png" alt="Secure payment">
+      <h3>Secure payment</h3>
+      
+    </div>
+    <div class="icons">
+      <img src="icons imege/gift-box.png" alt="Offers & gifts">
+      <h3>Offers & gifts</h3>
+  
+    </div>
+    <div class="icons">
+      <img src="icons imege/save-money.png" alt="10 days returns">
+      <h3>10 days returns</h3>
+    
+    </div>
+                
+        
+     </section>
+
+   
+      
+     <section>
+      <div class="end-page">
+        <h4>Suntem pasionați și responsabili de igiena locuinței tale</h4> 
+    
+        <a href="https://www.facebook.com/proxclean.ro" target="_blank">
+          <img src="icons imege/facebook.png" alt="Facebook">
+        </a>
+    
+        <a href="https://www.instagram.com/prox_clean?igsh=MXh4OTF0MW52dzZ4ag==" target="_blank">
+          <img src="icons imege/instagram.png" alt="Instagram">
+        </a>
+    
+        <a href="contact.proxclean@gmail.com">
+          <img src="icons imege/email.png" alt="Email">
+        </a>
+      </div>
+    </section>
+  
+
+  <script>
+    const cartContainer = document.querySelector('.cart-items');
+    const totalDisplay = document.querySelector('.cart-total');
+    const clearBtn = document.querySelector('.btn-clear');
+    const navMenu = document.getElementById('navMenu');
+    let cart = {};
+
+    function updateCart() {
+      cartContainer.innerHTML = '';
+      let total = 0;
+
+      if (Object.keys(cart).length === 0) {
+        cartContainer.innerHTML = 'Coșul este gol.';
+        totalDisplay.textContent = 'Total: 0.00 RON';
+        return;
+      }
+
+      for (const id in cart) {
+        const item = cart[id];
+        total += item.qty * item.price;
+
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+          <span>${item.name} x${item.qty}</span>
+          <span>${(item.qty * item.price).toFixed(2)} RON</span>
+        `;
+        cartContainer.appendChild(itemEl);
+      }
+
+      totalDisplay.textContent = 'Total: ' + total.toFixed(2) + ' RON';
+    }
+
+    document.querySelectorAll('.product-card button').forEach(button => {
+      button.addEventListener('click', e => {
+        const card = e.target.closest('.product-card');
+        const id = card.dataset.id;
+        const name = card.dataset.name;
+        const price = parseFloat(card.dataset.price);
+
+        if (!cart[id]) {
+          cart[id] = { name, price, qty: 1 };
+        } else {
+          cart[id].qty += 1;
+        }
+
+        updateCart();
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      cart = {};
+      updateCart();
+    });
+
+    function toggleMenu() {
+      navMenu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

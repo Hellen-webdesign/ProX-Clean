@@ -1,0 +1,150 @@
+
+body {
+    
+    color: rgb(4, 6, 6);
+    margin-left: 400px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(154, 249, 249);
+}
+
+h1 #desprenoi {
+    color: black;
+    object-fit: cover;
+    object-position: left;
+    float: left;
+    margin-left: 100px;
+}
+
+p {
+    color: black;
+    object-fit: cover;
+    object-position: left;
+    float: left;
+    margin-left: 100px;
+}
+
+section {
+background-color: white;
+color: black;
+
+
+}
+
+
+/* Meniu */
+
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+    object-position: left;
+    float: right;
+    margin-right: 100px;
+}
+
+a {
+ color: black;
+ font-size: 1.2rem;
+ text-decoration: none;
+ object-position: center;
+}
+
+
+/* MAIN */
+
+main h1 {
+
+object-fit: cover;
+object-position: center;
+float: right;
+margin-right: 1380px;
+margin-top:  10px;
+text-align: center;
+font-size: large;
+}
+
+.container {
+margin: 50px auto;
+width: 80%;
+
+}
+
+/* CONTACT INFO */
+
+.div {
+margin: 0px;
+padding: opx;
+box-sizing: border-box;
+font-family: sans-serif;
+background-color: aqua;
+}
+
+.contact-box {
+background: #fff;
+display: flex;
+}
+
+.contact-left {
+flex-basis: 60%;
+padding: 40px 60px;
+}
+
+
+
+.container p {
+margin-bottom: 40px;
+}
+
+.input-row .input-group {
+ flex-basis: 45%;
+}
+
+.input {
+width: 100%;
+border: none;
+border-bottom: 1px solid #ccc;
+outline: none;
+padding-bottom: 5px;
+}
+
+.textarea {
+width: 100%;
+border: 1px solid #ccc;
+outline: none;
+padding: 10px;
+box-sizing: border-box;
+}
+
+.label {
+margin-bottom: 6px;
+display: block;
+}
+
+.container button {
+background: #1c00b5;
+width: 100px;
+border: none;
+outline: none;
+color: #fff;
+height: 35px;
+border-radius: 30px;
+box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
+margin-top: 30px;
+}
+
+.contact-left h3 {
+color: #1c00b5;
+font-weight: 600;
+margin-bottom: 30px;
+}
+
+.container {
+margin-top: 120px;
+}
