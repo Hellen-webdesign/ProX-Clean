@@ -42,6 +42,17 @@
       
     }
 
+    .logo-link {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05) rotate(-1deg);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
     .menu-toggle {
       display: flex;
       flex-direction: column;
@@ -326,7 +337,9 @@
 <body>
 
   <header>
-    <img src="images/Logo ProX Clean .jpg background ROUND.png" alt="logo" class="logo" />
+    <a href="https://www.facebook.com/proxclean.ro" target="_blank" class="logo-link">
+      <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="Logo">
+    </a>
     <div class="menu-toggle" onclick="toggleMenu()">
       <span></span>
       <span></span>

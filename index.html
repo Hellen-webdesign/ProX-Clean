@@ -12,7 +12,7 @@
         <style>
              * {
       margin: 0;
-      padding: 0;+!!+``
+      padding: 0;
       box-sizing: border-box;
     }
     body {
@@ -20,7 +20,7 @@
       color: #2e2e2e;
       background-color:  #f9f9f9;
       line-height: 1.6;
-      padding-top: 80px;
+      padding-top: 60px;
     }
     a {
       text-decoration: none;
@@ -30,7 +30,7 @@
     div {
     padding: 2%;
     height: 100%;
-    top: 20;
+    top: 20px;
     left: 100%;
     border: none;
     overflow: hidden;
@@ -41,15 +41,16 @@
 
     /* HEADER & NAVBAR */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background-color: #C89C3F;
-     width: 100%;
-     align-items: center;
-     display: flex;
+      height: 60px; /* sau orice înălțime are */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #C89C3F;
+  display: flex;
+  align-items: center;
+  width: 100%;
     
     }
     .navbar {
@@ -137,7 +138,7 @@
     /* Logo fixă în colțul stânga-sus */
     .logo {
       position: absolute;
-  top: -3px;
+  top: -5px;
   left: 0px;
   width: 70px;
   height: auto;
@@ -166,6 +167,7 @@
       max-width: 500px;
       margin: 20px;
       text-align: center;
+      border: 2px solid #C89C3F; /* bordură în culoarea header-ului */
     }
     .featured-content h1 {
       font-size: 2rem;
@@ -182,7 +184,7 @@
    
     .featured img {
       width: 100%;
-      max-width: 380px;
+      max-width: 250px;
       height: auto;
       object-fit: cover;
       margin: 20px;
@@ -210,7 +212,7 @@
         height: auto;
         object-fit: cover;
         margin: 10px;
-        margin-left: 130px;
+        margin-left: 200px;
     }
 
     .container {
@@ -258,16 +260,6 @@
   
   
 }
-    
-
-    .figure-content img {
-  width: 100%; /* Imaginea ocupă 40% din spațiu */
-  height: auto; /* Păstrează proporțiile */
-  object-fit: cover; /* Asigură că imaginea nu se deformează */
-  border-radius: 10px; /* Colțuri rotunjite pentru un look mai elegant */
-  align-items: center;
-  
-}
 
     /* SECTIUNEA MAIN */
     .main {
@@ -280,12 +272,13 @@
     }
     .main img {
       width: 100%;
-      max-width: 200px;
-      height: auto;
-      object-fit: cover;
-      margin: 10px;
-      align-items: right;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        margin: 10px;
+        margin-left: 0px;
     }
+    
     .main-content {
       max-width: 50%; /* Textul ocupă 50% din container */
     text-align: left; /* Aliniere la stânga */
@@ -326,9 +319,9 @@
       margin-left: 150px;
     }
     .selector-content {
-      max-width: 50%; /* Textul ocupă 50% din container */
-    text-align: left; /* Aliniere la stânga */
-    margin-left: 20px; /* Spațiere între imagine și text */
+      display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* păstrează alinierea la stânga */
 
     }
     .selector-content h5 {
@@ -362,8 +355,9 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 200px; /* Dimensiunea butonului */
-    margin-top: 200px;
+    margin-top: 70px;
     margin-right: 0px;
+    margin: 30px 0 0 20px; /* spațiu sus + aliniere cu textul */
 }
 
     .selector-content button:hover {
@@ -447,6 +441,12 @@
             color: #fff;
           }
 
+          html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 
     /* MEDIA QUERIES */
 
@@ -460,6 +460,23 @@
   align-items: center;
 }
 
+.featured img {
+  max-width: 45%;      /* ajustează dimensiunea după nevoie */
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 90px;
+    margin-top: -20px;
+  }
+
+.featured {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px 10px !important;
+  background-color: #111 !important;
+}
 .figure-content,
 .main-content,
 .selector-content {
@@ -519,10 +536,12 @@
     top: 0;
     right: 0;
     z-index: 1100;
+    margin-top: 10px;
   }
 
   body {
   background-color: #C89C3F !important;
+  padding-top: 60px; /* ajustează după înălțimea header-ului */
 
   }
   
@@ -533,12 +552,24 @@
 }
 
 
+
   .logo {
-    order: 1;
-    height: 50px;
-    width: 50px;
+    height: 70px; /* ajustează după nevoie */
+    width: 70px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  margin-top: 0px;
   }
   
+  h1 {
+    display: block; /* Asigură-te că nu este ascuns */
+    font-size: 1.5rem; /* Ajustează dimensiunea după nevoie */
+    color: #111; /* Asigură vizibilitatea */
+    margin: 20px 0; /* Spațiu potrivit */
+    
+  }
       h1 {
     font-size: 1.5rem;       /* Micșorează dimensiunea fontului pe mobil */
   }
@@ -553,7 +584,14 @@
     margin: 0 !important;
   }
 
-  
+  .main img {
+    width: 70% !important;
+    max-width: 350px !important;
+    height: auto !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
 
   .featured figure img,
   .main img,
@@ -617,6 +655,16 @@
     font-size: 0.7rem; /* Reduce font size for text */
   }
   
+  .featured p {
+    white-space: normal;  /* Permite textului să se înfășoare */
+    line-height: 1.5;     /* Spațiu optim între linii */
+    word-break: break-word; /* Rupe cuvinte lungi */
+    text-align: left;     /* Aliniază textul la stânga */
+    padding-left: 0;      /* Fără indentare orizontală */
+    margin: 0;  
+    
+  }
+
   .selector p {
     white-space: normal;  /* Permite textului să se înfășoare */
     line-height: 1.5;     /* Spațiu optim între linii */
@@ -635,8 +683,6 @@
   margin: 0;                /* Elimină marginile */
   }
 }
-
-
     
     @media (max-width: 480px) 
     {
@@ -682,7 +728,9 @@
     <input type="checkbox" id="menu-toggle" class="menu-toggle" />
     <label for="menu-toggle" class="menu-icon">☰</label>
 
-    <img src="images/Logo ProX Clean .jpg background ROUND.png" alt="Logo ProX Clean" class="logo">
+    <a href="https://www.facebook.com/proxclean.ro" target="_blank" class="logo-link">
+      <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="Logo">
+    </a>
 
     <div class="navbar">
       <nav>
@@ -700,10 +748,10 @@
   <section class="featured">
     <div class="featured-content">
       <h1>Despre noi</h1>
-      <p>Suntem responsabili de igiena locuintei tale</p>
+      <p>Suntem responsabili de igiena locuintei tale!</p>
     </div>
     <div>
-      <img src="images/PHOTO-2025-06-13-13-11-50.jpg" alt="Imagine canapea">
+      <img src="images/516401568_734288025818297_538470181239007568_n.jpg" alt="Imagine canapea">
     </div>
   </section>
 
@@ -722,7 +770,7 @@
   <!-- SECTIUNEA MAIN -->
   <section class="main">
     <div>
-      <img src="images/PHOTO-2025-06-13-13-09-49.jpg" alt="Servicii profesionale de curățare">
+      <img src="images/PHOTO-2025-06-13-13-11-50.jpg" alt="Servicii profesionale de curățare">
     </div>
     <div class="main-content">
       <h4>Servicii profesionale de curățare</h4>

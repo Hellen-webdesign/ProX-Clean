@@ -104,37 +104,36 @@ color: #C89C3F;
 /* MENIU */
 
 .navbar {
-            background-color: #C89C3F;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            
-        }
+      display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C89C3F;
+  width: 100%;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+     
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      font-size: 19px;
+      font-weight: bold;
+    }
 
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 0;
-   
-        }
-
-        .navbar ul li {
-            margin: 10px;
-            justify-content: center;
-            
-            
-        }
-
-
-        nav ul li a {
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 20px;
-            font-weight: bold;
-        }
+    .navbar ul {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      list-style-type: none;
+      
+    }
 
       
         /* Imagini responsive */
@@ -176,6 +175,10 @@ color: #C89C3F;
   border: 0;
 }
 
+.menu-toggle:checked ~ .navbar {
+  display: flex;
+}
+
 .menu-icon {
   display: none;
   font-size: 2rem;
@@ -194,7 +197,7 @@ color: #C89C3F;
 
 .logo {
   position: absolute;
-  top: -13px;
+  top: 3px;
   left: 0px;
   width: 70px;
   height: auto;
@@ -210,10 +213,8 @@ color: #C89C3F;
   margin: 0 auto; /* Centrare pe mobil */
 }
 
+
 /* Featured */
-
-
-
 .featured figure img {
     width: 500px;
     height: 300px;
@@ -694,7 +695,7 @@ body {
     position: relative;
     z-index: 1500;
     background-color: #C89C3F !important;
-    padding-top: 50px !important;
+    padding-top: 30px !important;
     position: relative;
     z-index: 1500;
   }
@@ -712,6 +713,7 @@ body {
     cursor: pointer;
     font-size: 1.8rem;
     display: block;
+    margin-top: -20px;
   }
 
   .navbar {
@@ -809,6 +811,7 @@ body {
   /* LOGO */
   .logo {
     margin-bottom: 10px;
+    margin-top: -30px;
   }
 
   /* FOOTER & ICONS */
@@ -858,22 +861,23 @@ body {
         
 <body>
 
-    <nav class="navmeniu">
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">☰</label>
+    <header>
+  <nav class="navmeniu">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">☰</label>
 
-    <header class="navbar">
-        
-            <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="logo">
-            
-            <ul>
-                <li><a href="index.html"><strong>Despre noi</strong></a></li>
-                <li><a href="servicii.html"><strong>Servicii</strong></a></li>
-                <li><a href="Produse.html"><strong>Produse</strong></a></li>
-                <li><a href="Contact.html"><strong>Contact</strong></a></li>
-            </ul>
-        </nav>      
-    </header>
+    <a href="https://www.facebook.com/proxclean.ro" target="_blank" class="logo-link">
+      <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="Logo">
+    </a>
+
+    <ul class="navbar">
+      <li><a href="index.html"><strong>Despre noi</strong></a></li>
+      <li><a href="servicii.html"><strong>Servicii</strong></a></li>
+      <li><a href="Produse.html"><strong>Produse</strong></a></li>
+      <li><a href="Contact.html"><strong>Contact</strong></a></li>
+    </ul>
+  </nav>
+</header>
  <section>
 
 

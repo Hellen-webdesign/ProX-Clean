@@ -49,14 +49,24 @@
             margin-left: 15px;
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 2rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
 
+        input.menu-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Label-ul pentru meniu ascuns implicit */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #C89C3F;
+  user-select: none;
+  justify-content: space-between;
+}
      .menu {
             display: flex;
             gap: 15px;
@@ -66,6 +76,19 @@
         nav a:hover {
       background-color: #222;
     }
+
+    .navbar {
+      width: 100%;
+  display: flex;
+  justify-content: center; /* centru orizontal */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #C89C3F;
+  padding: 15px;
+  z-index: 1000;
+}
         .navbar a {
             color: rgb(14, 1, 1);
             text-decoration: none;
@@ -111,11 +134,20 @@
     top: 10px; /* distanța față de partea de sus a paginii */
     left: 0px; /* distanța față de partea dreaptă a paginii */
     width: 70px; /* dimensiunea dorită pentru logo */
-    height: 0px;
+    height: 70px;
     
 }
 
+.logo-link {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+.logo-link:hover {
+  transform: scale(1.05) rotate(-1deg);
+  opacity: 0.8;
+  cursor: pointer;
+}
 
 
 /* Set the menu color */
@@ -259,12 +291,21 @@ button:hover {
                 margin-right: 15px;
             }
 
-        
+            .navbar {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
             .menu-toggle:checked ~ .menu {
                 display: flex;
             }
          
-        
+            .logo {
+        width: 70px;
+        height: 70px;
+        margin-left: 10px;
+        margin-top: 5px;
+        vertical-align: middle;
+    }
         
         }
         .container {
@@ -320,7 +361,9 @@ button:hover {
 
 
   <div class="navbar">
-    <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="Logo">
+    <a href="https://www.facebook.com/proxclean.ro" target="_blank" class="logo-link">
+      <img src="images/Logo ProX Clean .jpg background ROUND.png" class="logo" alt="Logo">
+    </a>
     <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
     <label for="menu-toggle" class="menu-toggle">☰</label>
     <div class="menu">
