@@ -43,11 +43,9 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            
         }
-        .navbar .logo {
-            height: 50px;
-            margin-left: 15px;
-        }
+        
 
 
         input.menu-toggle {
@@ -86,7 +84,7 @@
   top: 0;
   left: 0;
   background-color: #C89C3F;
-  padding: 15px;
+  padding: 0px 15px;
   z-index: 1000;
 }
         .navbar a {
@@ -131,11 +129,11 @@
 
 .logo{
   
-    top: 10px; /* distanța față de partea de sus a paginii */
-    left: 0px; /* distanța față de partea dreaptă a paginii */
-    width: 70px; /* dimensiunea dorită pentru logo */
-    height: 70px;
-    
+  width: 70px !important;  /* Crește cât dorești */
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    max-width: none !important;
 }
 
 .logo-link {
@@ -293,7 +291,7 @@ button:hover {
 
             .navbar {
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0px 5px;
   }
             .menu-toggle:checked ~ .menu {
                 display: flex;
